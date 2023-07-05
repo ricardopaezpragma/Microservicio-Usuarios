@@ -15,17 +15,16 @@ public class UserRestController {
     private final IUserHandler userHandler;
 
     @GetMapping("/email/{email}")
-    public ResponseEntity getUserByEmail(@PathVariable String email) {
+    public ResponseEntity<UserDto> getUserByEmail(@PathVariable String email) {
         return ResponseEntity.ok(userHandler.getUserByEmail(email));
     }
     @GetMapping("/{userId}")
-    public ResponseEntity getById(@PathVariable int userId) {
+    public ResponseEntity<UserDto> getById(@PathVariable int userId) {
         return ResponseEntity.ok(userHandler.getById(userId));
     }
 
     @PostMapping()
-    public ResponseEntity saveUser(@RequestBody UserDto userDto) {
-        userHandler.saveUser(userDto);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
+    public ResponseEntity<UserDto> saveUser(@RequestBody UserDto userDto) {
+        return ResponseEntity.status(HttpStatus.CREATED).body(userHandler.saveUser(userDto));
     }
 }

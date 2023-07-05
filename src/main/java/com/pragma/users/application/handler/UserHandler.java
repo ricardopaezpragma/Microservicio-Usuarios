@@ -20,8 +20,12 @@ public class UserHandler implements IUserHandler {
     }
 
     @Override
-    public void saveUser(UserDto userDto) {
-        userServicePort.saveUser(userMapper.userDtoToUser(userDto));
+    public UserDto saveUser(UserDto userDto) {
+        return userMapper.userToUserDto(
+                userServicePort.saveUser(
+                        userMapper.userDtoToUser(userDto)
+                )
+        );
     }
 
     @Override
