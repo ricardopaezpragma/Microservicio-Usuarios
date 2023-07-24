@@ -1,10 +1,8 @@
 package com.pragma.users.application.dto;
 
-import com.pragma.users.domain.model.Role;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.util.List;
 
 @Data
 public class UserDto {

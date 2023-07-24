@@ -1,7 +1,6 @@
 package com.pragma.users.domain.model;
 
 import java.time.LocalDate;
-import java.util.List;
 
 public class User {
     private Integer id;

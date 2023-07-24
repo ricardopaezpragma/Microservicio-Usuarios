@@ -2,7 +2,7 @@ package com.pragma.users.infrastructure.output.jpa.adapter;
 
 import com.pragma.users.domain.model.User;
 import com.pragma.users.domain.spi.IUserPersistencePort;
-import com.pragma.users.infrastructure.exception.UserNotFoundException;
+import com.pragma.users.infrastructure.exception.UserException;
 import com.pragma.users.infrastructure.output.jpa.mapper.UserEntityMapper;
 import com.pragma.users.infrastructure.output.jpa.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
@@ -19,14 +19,16 @@ public class UserJpaAdapter implements IUserPersistencePort {
 
     @Override
     public User getUserByEmail(String email) {
-        return userEntityMapper.toUser(userRepository.findOneByEmail(email)
-                .orElseThrow(UserNotFoundException::new));
+        return userRepository.findOneByEmail(email)
+                .map(userEntityMapper::toUser)
+                .orElseThrow(() -> new UserException("email: " + email));
     }
 
     @Override
     public User getById(int userId) {
-        return userEntityMapper.toUser(userRepository.findById(userId)
-                .orElseThrow(UserNotFoundException::new));
+        return userRepository.findById(userId)
+                .map(userEntityMapper::toUser)
+                .orElseThrow(() -> new UserException("id: " + userId));
     }
 
 }

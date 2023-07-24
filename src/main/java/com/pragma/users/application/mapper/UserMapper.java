@@ -1,6 +1,5 @@
 package com.pragma.users.application.mapper;
 
-import com.pragma.users.application.dto.RoleDto;
 import com.pragma.users.application.dto.UserDto;
 import com.pragma.users.application.handler.IRoleHandler;
 import com.pragma.users.domain.model.User;
@@ -8,8 +7,6 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.ReportingPolicy;
 import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
 
 @Mapper(componentModel = "spring",
         unmappedSourcePolicy = ReportingPolicy.IGNORE,
