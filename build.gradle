@@ -52,9 +52,8 @@ tasks.named('test') {
 }
 sonarqube {
 	properties {
-		property "sonar.projectKey", "plazoleta" // Reemplaza "nombre-del-tu-proyecto" con el identificador único de tu proyecto en SonarCloud
-		property "sonar.organization", "plazoleta" // Reemplaza "nombre-de-tu-organización" con el nombre de tu organización en SonarCloud
-		property "sonar.host.url", "https://sonarcloud.io" // URL de SonarCloud
-		property "sonar.token", "a17fee7ba5abc8bf8926675c943a993865ee57e7" // Reemplaza "tu-token-de-acceso" con el token generado en SonarCloud
+		property "sonar.projectKey", "ricardopaezpragma_Microservicio-Usuarios"
+		property "sonar.organization", "ricardopaezpragma"
+		property "sonar.host.url", "https://sonarcloud.io"
 	}
 }
