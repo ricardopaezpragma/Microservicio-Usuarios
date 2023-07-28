@@ -49,6 +49,17 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
        # SonarCloud access token should be generated from https://sonarcloud.io/account/security/
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+    - name: Verify Coverage Threshold
+      run: |
+          COVERAGE_THRESHOLD=80
+          REPORT_PATH="path/to/your/report.json"
+          coverage=$(cat $REPORT_PATH | jq -r '.coverage')
+          if (( $(awk "BEGIN {print ($coverage >= $COVERAGE_THRESHOLD)}") )); then
+            echo "Coverage meets the threshold."
+          else
+            echo "Coverage is below the threshold. Current coverage: $coverage%"
+            exit 1
+          fi    
 
 
     - name: Build & push Docker image
