@@ -48,11 +48,6 @@ dependencyManagement {
 		mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
 	}
 }
-jacocoTestReport {
-	reports {
-		xml.enabled true
-	}
-}
 tasks.named('test') {
 	useJUnitPlatform()
 	finalizedBy jacocoTestReport

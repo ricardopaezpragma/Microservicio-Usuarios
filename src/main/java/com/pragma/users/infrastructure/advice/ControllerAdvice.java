@@ -15,7 +15,7 @@ public class ControllerAdvice {
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND,
                 error.getMessage());
         problemDetail.setTitle("User Not Found");
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(problemDetail);
     }
 
     @ExceptionHandler(value = RoleException.class)
@@ -23,6 +23,6 @@ public class ControllerAdvice {
         ProblemDetail problemDetail = ProblemDetail.forStatusAndDetail(HttpStatus.NOT_FOUND,
                 error.getMessage());
         problemDetail.setTitle("User Not Found");
-        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(problemDetail);
     }
 }
