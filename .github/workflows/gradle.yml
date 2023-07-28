@@ -33,4 +33,5 @@ jobs:
       with:
         arguments: build
     - name: Run chmod to make gradlew executable
-      run: chmod +x /path/to/gradlew
+      run: .\gradlew.bat
+
