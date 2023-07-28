@@ -50,6 +50,7 @@ dependencyManagement {
 }
 tasks.named('test') {
 	useJUnitPlatform()
+	finalizedBy jacocoTestReport
 }
 sonarqube {
 	properties {

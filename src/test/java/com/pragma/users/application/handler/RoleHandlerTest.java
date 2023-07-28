@@ -70,7 +70,7 @@ class RoleHandlerTest {
         RoleDto result = roleHandler.getRoleByName(roleName);
 
         // Assert
-        assertEquals(roleDto, 3);
+        assertEquals(roleDto, result);
     }
 
     @Test
