@@ -55,6 +55,5 @@ sonarqube {
 		property "sonar.projectKey", "ricardopaezpragma_Microservicio-Usuarios"
 		property "sonar.organization", "ricardopaezpragma"
 		property "sonar.host.url", "https://sonarcloud.io"
-		property "sonar.token", "1fbc2dd48acae3855d654f8a6ff426ca61584f46" // Reemplaza "tu-token-de-acceso" con el token generado en SonarCloud
 	}
 }
